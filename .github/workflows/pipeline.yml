@@ -32,4 +32,5 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'floating-savannah-78594'
-          heroku_email: 'rnlbucio@gmail.com'
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          healthcheck: 'https://floating-savannah-78594.herokuapp.com/health'
