@@ -1,1 +1,1 @@
-web: node app.jsxyz
+web: node app.js
