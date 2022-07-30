@@ -6,7 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  retries: {
-    runMode: 2,
-  },
+  // retries: {
+  //   runMode: 2,
+  // },
 })
