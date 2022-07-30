@@ -34,3 +34,5 @@ jobs:
           heroku_app_name: 'floating-savannah-78594'
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           healthcheck: 'https://floating-savannah-78594.herokuapp.com/health'
+          checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
