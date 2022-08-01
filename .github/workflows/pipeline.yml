@@ -40,20 +40,20 @@ jobs:
           healthcheck: 'https://floating-savannah-78594.herokuapp.com/health'
           checkstring: 'ok'
           rollbackonhealthcheckfailed: true
-      - name: Build Success
-          uses: rjstone/discord-webhook-notify@v1.0.4
-          if: success()
-          with:
-              severity: info
-              text: A new version of Pokedex deployed
-              webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: Build failed
-          uses: rjstone/discord-webhook-notify@v1.0.4
-          if: failure()
-          with:
-              severity: error
-              text: Build failed
-              webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: notify build success
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: success()
+        with:
+          severity: info
+          text: A new version of Pokedex deployed
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: notify build failed
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: failure()
+        with:
+          severity: error
+          text: Build failed
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
